@@ -82,9 +82,107 @@
             justify-content: center;
             transition: all 0.3s ease;
             text-decoration: none;
+            cursor: pointer;
+            border: none;
         }
         .whatsapp-float:hover {
             transform: scale(1.1);
+            background-color: #20b858;
+        }
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+        .whatsapp-chat-bubble {
+            position: fixed;
+            bottom: 110px;
+            right: 40px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+            z-index: 99;
+            width: 350px;
+            max-width: 90vw;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideUp 0.3s ease-out;
+        }
+        .whatsapp-chat-bubble.active {
+            display: flex;
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .whatsapp-chat-header {
+            background-color: #25d366;
+            color: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .whatsapp-chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .whatsapp-chat-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+        }
+        .whatsapp-chat-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .whatsapp-chat-message {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .whatsapp-chat-input {
+            padding: 12px 16px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 8px;
+        }
+        .whatsapp-chat-input input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+        .whatsapp-chat-input button {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.2s;
+        }
+        .whatsapp-chat-input button:hover {
             background-color: #20b858;
         }
         /* Mejoras de contraste */
@@ -154,12 +252,12 @@
 
                 <!-- Desktop CTA -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="bg-brand-gold hover:bg-brand-goldhover text-white px-6 py-2.5 rounded text-sm font-bold tracking-wide uppercase transition-colors">
+                    <a href="#contacto" class="bg-brand-gold hover:bg-brand-goldhover text-white px-6 py-2.5 rounded text-sm font-bold tracking-wide uppercase transition-colors">
                         Consulta Ahora
                     </a>
-                    <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 text-white transition-colors" title="Contactar por WhatsApp">
+                    <button onclick="openWhatsAppChat()" class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 text-white transition-colors" title="Contactar por WhatsApp">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.411-2.393-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.171c-1.493.821-2.771 1.98-3.7 3.402C2.508 13.900 2.101 15.662 2.191 17.352c.096 1.978.575 3.957 1.55 5.48l.002.003C3.840 23.432 5.410 24 6.996 24h.007c1.735 0 3.352-.501 4.651-1.48l.107-.062c1.341-.784 2.454-1.885 3.233-3.256 1.393-2.432 2.18-5.421 2.18-8.598 0-4.751-2.409-9.041-6.331-11.566-1.898-1.257-4.047-1.927-6.289-1.927zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"/></svg>
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -178,9 +276,9 @@
                 <a href="#nosotros" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Nosotros</a>
                 <a href="#areas" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Áreas</a>
                 <a href="#contacto" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Contacto</a>
-                <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="block mt-4 px-3 py-3 text-center text-base font-bold text-white bg-brand-gold hover:bg-brand-goldhover rounded transition-colors">
+                <button onclick="openWhatsAppChat()" class="block w-full mt-4 px-3 py-3 text-center text-base font-bold text-white bg-brand-gold hover:bg-brand-goldhover rounded transition-colors">
                     Consultar por WhatsApp
-                </a>
+                </button>
             </div>
         </div>
     </nav>
@@ -458,6 +556,19 @@
                 <div class="w-full lg:w-2/3">
                     <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
                         <h3 class="text-2xl font-serif text-brand-navy font-bold mb-6">Envíenos un mensaje</h3>
+                        
+                        <!-- Selector de método de contacto -->
+                        <div class="mb-8 flex gap-4">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="contact-method" value="email" checked class="mr-2 w-4 h-4 cursor-pointer">
+                                <span class="text-sm font-semibold text-brand-navy">Enviar por Email</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="contact-method" value="whatsapp" class="mr-2 w-4 h-4 cursor-pointer">
+                                <span class="text-sm font-semibold text-brand-navy">Enviar por WhatsApp</span>
+                            </label>
+                        </div>
+
                         <form id="contact-form" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
@@ -482,7 +593,7 @@
                                 <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all resize-none"></textarea>
                             </div>
                             <button type="submit" class="w-full bg-brand-navy hover:bg-gray-800 text-white font-bold py-4 px-8 rounded tracking-wide uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
-                                Enviar Consulta
+                                <span id="submit-text">Enviar Consulta</span>
                             </button>
                             <p class="text-xs text-gray-500 text-center">* Campos obligatorios. Nos pondremos en contacto en la mayor brevedad posible.</p>
                         </form>
@@ -551,13 +662,34 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Chat Bubble -->
+    <div id="whatsapp-chat" class="whatsapp-chat-bubble">
+        <div class="whatsapp-chat-header">
+            <h3>💬 Chatea con nosotros</h3>
+            <button onclick="closeWhatsAppChat()">×</button>
+        </div>
+        <div class="whatsapp-chat-body">
+            <div class="whatsapp-chat-message">
+                ¡Hola! Bienvenido a Pacta Legal. ¿En qué podemos ayudarte hoy?
+            </div>
+        </div>
+        <div class="whatsapp-chat-input">
+            <input type="text" id="whatsapp-message-input" placeholder="Escribe tu mensaje..." onkeypress="handleWhatsAppKeyPress(event)">
+            <button onclick="sendWhatsAppMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/573014139558?text=Hola,%20me%20gustaría%20recibir%20asesoría%20legal%20de%20Pacta%20Legal." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chatea con nosotros por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <button onclick="openWhatsAppChat()" class="whatsapp-float" title="Abre el chat de WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.411-2.393-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.171c-1.493.821-2.771 1.98-3.7 3.402C2.508 13.900 2.101 15.662 2.191 17.352c.096 1.978.575 3.957 1.55 5.48l.002.003C3.840 23.432 5.410 24 6.996 24h.007c1.735 0 3.352-.501 4.651-1.48l.107-.062c1.341-.784 2.454-1.885 3.233-3.256 1.393-2.432 2.18-5.421 2.18-8.598 0-4.751-2.409-9.041-6.331-11.566-1.898-1.257-4.047-1.927-6.289-1.927zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"/></svg>
+    </button>
 
     <!-- Scripts -->
     <script>
+        const WHATSAPP_NUMBER = '573014139558';
+
         // Actualizar año actual en el footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -592,7 +724,38 @@
             }
         });
 
-        // Validación y envío del formulario de contacto
+        // WhatsApp Chat Functions
+        function openWhatsAppChat() {
+            const chatBubble = document.getElementById('whatsapp-chat');
+            chatBubble.classList.add('active');
+            document.getElementById('whatsapp-message-input').focus();
+        }
+
+        function closeWhatsAppChat() {
+            const chatBubble = document.getElementById('whatsapp-chat');
+            chatBubble.classList.remove('active');
+        }
+
+        function sendWhatsAppMessage() {
+            const input = document.getElementById('whatsapp-message-input');
+            const message = input.value.trim();
+            
+            if (message === '') return;
+            
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+            
+            input.value = '';
+            closeWhatsAppChat();
+        }
+
+        function handleWhatsAppKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendWhatsAppMessage();
+            }
+        }
+
+        // Formulario de contacto con opción de email o WhatsApp
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -603,6 +766,7 @@
                 const email = document.getElementById('email').value.trim();
                 const asunto = document.getElementById('asunto').value.trim();
                 const mensaje = document.getElementById('mensaje').value.trim();
+                const method = document.querySelector('input[name="contact-method"]:checked').value;
 
                 if (!nombre || !telefono || !email || !asunto || !mensaje) {
                     alert('Por favor, completa todos los campos del formulario.');
@@ -616,17 +780,35 @@
                     return;
                 }
 
-                // Mensaje personalizado para WhatsApp
-                const textMessage = `Hola, me llamo ${nombre}. Tengo una consulta sobre: ${asunto}. ${mensaje}. Mi correo es: ${email} y mi teléfono es: ${telefono}`;
-                const encodedText = encodeURIComponent(textMessage);
-                const waUrl = `https://wa.me/573014139558?text=${encodedText}`;
-                
-                // Abre WhatsApp en una nueva pestaña
-                window.open(waUrl, '_blank');
-                
-                // Limpia el formulario
-                contactForm.reset();
-                alert('¡Gracias por tu consulta! Te redirigiremos a WhatsApp para completar tu solicitud.');
+                if (method === 'whatsapp') {
+                    // Enviar por WhatsApp
+                    const textMessage = `Hola, me llamo ${nombre}. Tengo una consulta sobre: ${asunto}. ${mensaje}. Mi correo es: ${email} y mi teléfono es: ${telefono}`;
+                    const encodedText = encodeURIComponent(textMessage);
+                    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
+                    window.open(waUrl, '_blank');
+                    contactForm.reset();
+                    alert('¡Gracias por tu consulta! Te redirigiremos a WhatsApp.');
+                } else {
+                    // Enviar por Email (simulado - en producción usar un backend)
+                    const subject = encodeURIComponent(`Consulta: ${asunto}`);
+                    const body = encodeURIComponent(`Nombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\n\nMensaje:\n${mensaje}`);
+                    const mailtoLink = `mailto:asesoria@pactalegal.com.co?subject=${subject}&body=${body}`;
+                    window.location.href = mailtoLink;
+                    contactForm.reset();
+                }
+            });
+
+            // Actualizar el texto del botón según el método seleccionado
+            const contactMethods = document.querySelectorAll('input[name="contact-method"]');
+            contactMethods.forEach(method => {
+                method.addEventListener('change', (e) => {
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    if (e.target.value === 'whatsapp') {
+                        document.getElementById('submit-text').textContent = 'Enviar por WhatsApp';
+                    } else {
+                        document.getElementById('submit-text').textContent = 'Enviar por Email';
+                    }
+                });
             });
         }
     </script>
