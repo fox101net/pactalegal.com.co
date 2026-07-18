@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-9usAa3IW2lEnf3lGY6i7IILmLzlIZixyPkC+Skip5x4sozCqoJ5V29NZUOMyLjn5GTC2QnkX2VsndsmFQtc8/g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-9usAa3IW2lEnf3lGY6i7IILmLzlIZixyPkC+Skip5x4sozCqoJ5V29NZUOMyLjn5GTC2QnkX2V1ztgdC8N7Uu5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Tailwind Configuration -->
     <script>
@@ -105,6 +105,23 @@
             max-width: 100%;
             height: auto;
         }
+        /* Asegurar que los iconos de redes sociales se muestren correctamente */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            background-color: #C49A45;
+            color: white;
+        }
     </style>
 </head>
 <body class="font-sans brand-text antialiased bg-white selection:bg-brand-gold selection:text-white">
@@ -126,23 +143,23 @@
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#inicio" class="text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">INICIO</a>
                     <a href="#nosotros" class="text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">NOSOTROS</a>
-                    <a href="#areas" class="text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">ÁREAS DE PRÁCTICA</a>
+                    <a href="#areas" class="text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">ÁREAS</a>
                     <a href="#contacto" class="text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">CONTACTO</a>
                 </div>
 
                 <!-- Desktop CTA -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="bg-brand-gold hover:bg-brand-goldhover text-white px-6 py-2.5 rounded text-sm font-bold tracking-wide uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2">
+                    <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="bg-brand-gold hover:bg-brand-goldhover text-white px-6 py-2.5 rounded text-sm font-bold tracking-wide uppercase transition-colors">
                         Consulta Ahora
                     </a>
-                    <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-600 text-2xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded" aria-label="Contactar por WhatsApp">
+                    <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-600 text-2xl transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 rounded" title="Contactar por WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold rounded p-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold rounded p-2" aria-label="Abrir menú" aria-expanded="false">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -154,9 +171,9 @@
             <div class="px-4 pt-2 pb-6 space-y-1">
                 <a href="#inicio" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Inicio</a>
                 <a href="#nosotros" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Nosotros</a>
-                <a href="#areas" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Áreas de Práctica</a>
+                <a href="#areas" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Áreas</a>
                 <a href="#contacto" class="block px-3 py-3 text-base font-medium text-brand-navy hover:bg-gray-50 hover:text-brand-gold rounded focus:outline-none focus:ring-2 focus:ring-brand-gold">Contacto</a>
-                <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="block mt-4 px-3 py-3 text-center text-base font-bold text-white bg-brand-gold hover:bg-brand-goldhover rounded transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="block mt-4 px-3 py-3 text-center text-base font-bold text-white bg-brand-gold hover:bg-brand-goldhover rounded transition-colors">
                     Consultar por WhatsApp
                 </a>
             </div>
@@ -180,14 +197,14 @@
                     </h1>
                     
                     <p class="text-gray-300 text-lg mb-10 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        En Pacta Legal acompañamos a nuestros clientes con estrategias jurídicas efectivas, éticas y personalizadas. Protegemos lo que más le importa con excelencia profesional y transparencia en cada proceso legal.
+                        En Pacta Legal acompañamos a nuestros clientes con estrategias jurídicas efectivas, éticas y personalizadas. Protegemos lo que más le importa con excelencia profesional y transparencia.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#areas" class="bg-brand-gold hover:bg-brand-goldhover text-white px-8 py-3.5 rounded font-bold tracking-wide uppercase transition-colors text-sm text-center shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2">
+                        <a href="#areas" class="bg-brand-gold hover:bg-brand-goldhover text-white px-8 py-3.5 rounded font-bold tracking-wide uppercase transition-colors text-sm text-center shadow-lg">
                             Nuestros Servicios
                         </a>
-                        <a href="#contacto" class="bg-transparent border-2 border-gray-400 text-white hover:border-white hover:bg-white/10 px-8 py-3.5 rounded font-bold tracking-wide uppercase transition-colors text-sm text-center focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                        <a href="#contacto" class="bg-transparent border-2 border-gray-400 text-white hover:border-white hover:bg-white/10 px-8 py-3.5 rounded font-bold tracking-wide uppercase transition-colors text-sm text-center">
                             <i class="fab fa-whatsapp text-lg mr-2"></i>Contáctanos
                         </a>
                     </div>
@@ -217,7 +234,7 @@
                     </h2>
                     
                     <p class="text-brand-gray text-lg mb-8 leading-relaxed">
-                        En <strong class="text-brand-navy">Pacta Legal</strong> ofrecemos un servicio jurídico integral, orientado a prevenir, solucionar y acompañar cada situación legal de nuestros clientes. Contamos con profesionales especializados en diversas áreas del derecho, comprometidos con brindarte soluciones efectivas adaptadas a tus necesidades específicas.
+                        En <strong class="text-brand-navy">Pacta Legal</strong> ofrecemos un servicio jurídico integral, orientado a prevenir, solucionar y acompañar cada situación legal de nuestros clientes con rigor profesional y cercanía humana.
                     </p>
                     
                     <ul class="space-y-4 mb-10">
@@ -241,7 +258,7 @@
                         </li>
                     </ul>
                     
-                    <a href="#mision-vision" class="inline-block border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white px-8 py-3 rounded font-bold tracking-wide uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2">
+                    <a href="#mision-vision" class="inline-block border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white px-8 py-3 rounded font-bold tracking-wide uppercase transition-colors">
                         Conócenos Más
                     </a>
                 </div>
@@ -275,7 +292,7 @@
                     </div>
                     <h3 class="text-2xl font-serif text-brand-navy font-bold mb-4">Nuestra Misión</h3>
                     <p class="text-brand-gray leading-relaxed mb-4 text-sm">
-                        En Pacta Legal prestamos servicios jurídicos integrales de alta calidad, orientados a la protección efectiva de los derechos e intereses de personas, empresas e instituciones. Nuestro equipo multidisciplinario trabaja con rigor profesional y creatividad para encontrar soluciones legales óptimas.
+                        En Pacta Legal prestamos servicios jurídicos integrales de alta calidad, orientados a la protección efectiva de los derechos e intereses de personas, empresas e instituciones.
                     </p>
                     <p class="text-brand-gray leading-relaxed text-sm">
                         Nuestro propósito es construir relaciones de confianza a largo plazo, sustentadas en la transparencia, la cercanía y la excelencia en el servicio.
@@ -290,10 +307,10 @@
                     </div>
                     <h3 class="text-2xl font-serif text-brand-navy font-bold mb-4">Nuestra Visión</h3>
                     <p class="text-brand-gray leading-relaxed mb-4 text-sm">
-                        Ser el aliado jurídico estratégico de mayor confianza para personas, empresas e instituciones, distinguiéndonos por la excelencia técnica, la innovación, la integridad y la responsabilidad social. Aspiramos a ser reconocidos como una firma moderna y dinámicamente competitiva.
+                        Ser el aliado jurídico estratégico de mayor confianza para personas, empresas e instituciones, distinguiéndonos por la excelencia técnica, la innovación, la integridad y la dedicación.
                     </p>
                     <p class="text-brand-gray leading-relaxed text-sm">
-                        Pacta Legal orienta su crecimiento hacia el fortalecimiento de una firma moderna, competitiva y reconocida por la calidad de sus servicios y la construcción de relaciones duraderas con sus clientes en toda Colombia.
+                        Pacta Legal orienta su crecimiento hacia el fortalecimiento de una firma moderna, competitiva y reconocida por la calidad de sus servicios y la construcción de relaciones duraderas.
                     </p>
                 </div>
             </div>
@@ -320,7 +337,7 @@
                     <p class="text-brand-gray text-sm mb-8 flex-grow">
                         Asesoría integral en contratos, obligaciones, responsabilidad civil, derechos reales, sucesiones y asuntos relativos a bienes inmuebles y muebles.
                     </p>
-                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">
+                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">
                         Saber más <i class="fas fa-chevron-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -334,7 +351,7 @@
                     <p class="text-brand-gray text-sm mb-8 flex-grow">
                         Defensa sólida de derechos laborales, negociación de contratos, despidos injustos, conflictos laborales y asesoría corporativa especializada.
                     </p>
-                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">
+                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">
                         Saber más <i class="fas fa-chevron-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -348,7 +365,7 @@
                     <p class="text-brand-gray text-sm mb-8 flex-grow">
                         Constitución de sociedades, gobierno corporativo, fusiones y adquisiciones, marcas, patentes y propiedad intelectual.
                     </p>
-                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">
+                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">
                         Saber más <i class="fas fa-chevron-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -362,7 +379,7 @@
                     <p class="text-brand-gray text-sm mb-8 flex-grow">
                         Divorcios de mutuo acuerdo y contenciosos, custodia de menores, alimentos, sucesiones complejas y asuntos familiares.
                     </p>
-                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">
+                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">
                         Saber más <i class="fas fa-chevron-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -376,7 +393,7 @@
                     <p class="text-brand-gray text-sm mb-8 flex-grow">
                         Defensa penal rigurosa y especializada, representación de víctimas, audiencias y asesoría corporativa preventiva en materia penal.
                     </p>
-                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-2 py-1">
+                    <a href="#contacto" class="text-brand-gold text-sm font-bold uppercase tracking-wide flex items-center hover:text-brand-goldhover transition-colors mt-auto focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">
                         Saber más <i class="fas fa-chevron-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -405,7 +422,7 @@
                             </div>
                             <div>
                                 <h4 class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Teléfono / WhatsApp</h4>
-                                <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="text-lg text-brand-navy font-bold hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1">+57 301 4139558</a>
+                                <a href="https://wa.me/573014139558" target="_blank" rel="noopener noreferrer" class="text-lg text-brand-navy font-bold hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">+57 301 4139558</a>
                             </div>
                         </div>
                         
@@ -415,7 +432,7 @@
                             </div>
                             <div>
                                 <h4 class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Correo Electrónico</h4>
-                                <a href="mailto:asesoria@pactalegal.com.co" class="text-lg text-brand-navy font-bold hover:text-brand-gold transition-colors break-all focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1">asesoria@pactalegal.com.co</a>
+                                <a href="mailto:asesoria@pactalegal.com.co" class="text-lg text-brand-navy font-bold hover:text-brand-gold transition-colors break-all focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">asesoria@pactalegal.com.co</a>
                             </div>
                         </div>
 
@@ -440,26 +457,26 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre Completo *</label>
-                                    <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 outline-none transition-colors" placeholder="Su nombre">
+                                    <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all">
                                 </div>
                                 <div>
                                     <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
-                                    <input type="tel" id="telefono" name="telefono" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 outline-none transition-colors" placeholder="+57 301 ...">
+                                    <input type="tel" id="telefono" name="telefono" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all">
                                 </div>
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo Electrónico *</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 outline-none transition-colors" placeholder="correo@ejemplo.com">
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all">
                             </div>
                             <div>
                                 <label for="asunto" class="block text-sm font-medium text-gray-700 mb-2">Asunto *</label>
-                                <input type="text" id="asunto" name="asunto" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 outline-none transition-colors" placeholder="Tema de consulta">
+                                <input type="text" id="asunto" name="asunto" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all">
                             </div>
                             <div>
                                 <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje *</label>
-                                <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 outline-none transition-colors resize-none" placeholder="Describa brevemente su situación legal..."></textarea>
+                                <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all resize-none"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-brand-navy hover:bg-gray-800 text-white font-bold py-4 px-8 rounded tracking-wide uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2">
+                            <button type="submit" class="w-full bg-brand-navy hover:bg-gray-800 text-white font-bold py-4 px-8 rounded tracking-wide uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold">
                                 Enviar Consulta
                             </button>
                             <p class="text-xs text-gray-500 text-center">* Campos obligatorios. Nos pondremos en contacto en la mayor brevedad posible.</p>
@@ -477,22 +494,22 @@
                 <!-- Brand -->
                 <div>
                     <div class="flex items-center mb-6 bg-white/5 p-2 rounded inline-block">
-                        <img src="image_0a542f.jpg" alt="Logo de Pacta Legal" loading="lazy" class="h-12 w-auto object-contain filter invert brightness-0">
+                        <img src="image_0a542f.jpg" alt="Logo de Pacta Legal" loading="lazy" class="h-12 w-auto object-contain">
                         <div class="ml-3">
                             <span class="block font-serif font-bold text-xl text-white leading-tight">PACTA LEGAL</span>
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        Firma colombiana de asesoría legal especializada, comprometida con la excelencia jurídica, ofreciendo soluciones legales preventivas y representación judicial con altos estándares de calidad.
+                        Firma colombiana de asesoría legal especializada, comprometida con la excelencia jurídica, ofreciendo soluciones legales preventivas y representación judicial con altos estándares.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-full" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-navy focus:ring-brand-gold rounded-full" title="Síguenos en LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-full" aria-label="Instagram">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-navy focus:ring-brand-gold rounded-full" title="Síguenos en Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-full" aria-label="Facebook">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-navy focus:ring-brand-gold rounded-full" title="Síguenos en Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
@@ -517,7 +534,7 @@
                         <li class="flex items-center"><i class="fas fa-envelope w-6"></i> <a href="mailto:asesoria@pactalegal.com.co" class="hover:text-white transition-colors break-all">asesoria@pactalegal.com.co</a></li>
                         <li class="mt-4 pt-4 border-t border-white/10">
                             <a href="#" class="hover:text-white transition-colors block mb-2 focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">Aviso de Privacidad</a>
-                            <a href="#" class="hover:text-white transition-colors block focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">Términos y Condiciones</a>
+                            <a href="terms-conditions.html" class="hover:text-white transition-colors block focus:outline-none focus:ring-2 focus:ring-brand-gold rounded px-1 py-1">Términos y Condiciones</a>
                         </li>
                     </ul>
                 </div>
@@ -530,7 +547,7 @@
     </footer>
 
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/573014139558?text=Hola,%20me%20gustaría%20recibir%20asesoría%20legal%20de%20Pacta%20Legal." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chatea con nosotros en WhatsApp" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/573014139558?text=Hola,%20me%20gustaría%20recibir%20asesoría%20legal%20de%20Pacta%20Legal." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chatea con nosotros por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
