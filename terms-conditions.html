@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-9usAa3IW2lEnf3lGY6i7IILmLzlIZixyPkC+Skip5x4sozCqoJ5V29NZUOMyLjn5GTC2QnkX2V-n2zm89+NUvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-9usAa3IW2lEnf3lGY6i7IILmLzlIZixyPkC+Skip5x4sozCqoJ5V29NZUOMyLjn5GTC2QnkX2V1ztgdC8N7Uu5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Tailwind Configuration -->
     <script>
@@ -62,6 +62,23 @@
         img {
             max-width: 100%;
             height: auto;
+        }
+        /* Asegurar que los iconos de redes sociales se muestren correctamente */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            background-color: #C49A45;
+            color: white;
         }
     </style>
 </head>
@@ -130,7 +147,7 @@
                 <section>
                     <h2 class="text-2xl font-serif font-bold text-brand-navy mb-4">1. Aceptación de Términos</h2>
                     <p class="text-gray-700 leading-relaxed">
-                        Al acceder y utilizar el sitio web de Pacta Legal y nuestros servicios legales, aceptas estar vinculado por estos Términos y Condiciones. Si no estás de acuerdo con alguno de estos términos, por favor no utilices nuestros servicios.
+                        Al acceder y utilizar el sitio web de Pacta Legal y nuestros servicios legales, aceptas estar vinculado por estos Términos y Condiciones. Si no estás de acuerdo con alguno de los términos, por favor no utilices nuestros servicios.
                     </p>
                 </section>
 
@@ -151,10 +168,10 @@
                 <section>
                     <h2 class="text-2xl font-serif font-bold text-brand-navy mb-4">3. Acuerdo de Representación</h2>
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        Cualquier servicio legal prestado por Pacta Legal estará sujeto a un acuerdo de representación legal formal entre la firma y el cliente. Este acuerdo especificará los términos, honorarios, alcance del servicio y otras condiciones importantes.
+                        Cualquier servicio legal prestado por Pacta Legal estará sujeto a un acuerdo de representación legal formal entre la firma y el cliente. Este acuerdo especificará los términos, el alcance del servicio y los honorarios.
                     </p>
                     <p class="text-gray-700 leading-relaxed">
-                        El cliente debe proporcionar información completa y veraz para que Pacta Legal pueda prestar sus servicios de manera efectiva. El cliente es responsable de mantener la confidencialidad de la información compartida con la firma.
+                        El cliente debe proporcionar información completa y veraz para que Pacta Legal pueda prestar sus servicios de manera efectiva. El cliente es responsable de mantener la confidencialidad de la comunicación con su abogado.
                     </p>
                 </section>
 
@@ -177,7 +194,7 @@
                 <section>
                     <h2 class="text-2xl font-serif font-bold text-brand-navy mb-4">5. Confidencialidad y Secreto Profesional</h2>
                     <p class="text-gray-700 leading-relaxed">
-                        Pacta Legal mantiene la máxima confidencialidad de toda la información compartida por los clientes, conforme a las normas del secreto profesional abogadil y la legislación vigente. La información del cliente será protegida y no será compartida con terceros sin consentimiento expreso del cliente, excepto cuando la ley lo requiera.
+                        Pacta Legal mantiene la máxima confidencialidad de toda la información compartida por los clientes, conforme a las normas del secreto profesional abogadil y la legislación vigente en Colombia.
                     </p>
                 </section>
 
@@ -209,7 +226,7 @@
                 <section>
                     <h2 class="text-2xl font-serif font-bold text-brand-navy mb-4">8. Propiedad Intelectual</h2>
                     <p class="text-gray-700 leading-relaxed">
-                        Todo el contenido del sitio web de Pacta Legal, incluyendo textos, gráficos, logos, imágenes y software, es propiedad de la firma o de sus proveedores de contenido. No está permitido copiar, reproducir, distribuir o transmitir este contenido sin autorización expresa de Pacta Legal.
+                        Todo el contenido del sitio web de Pacta Legal, incluyendo textos, gráficos, logos, imágenes y software, es propiedad de la firma o de sus proveedores de contenido. No está permitido reproducir, distribuir o transmitir este contenido sin autorización expresa.
                     </p>
                 </section>
 
@@ -230,7 +247,7 @@
                 <section>
                     <h2 class="text-2xl font-serif font-bold text-brand-navy mb-4">10. Exoneración de Responsabilidad</h2>
                     <p class="text-gray-700 leading-relaxed">
-                        El sitio web de Pacta Legal se proporciona "tal como está" sin garantías de ningún tipo. Pacta Legal no garantiza que el sitio sea libre de errores, interrupciones o virus. El uso del sitio es bajo el riesgo del usuario.
+                        El sitio web de Pacta Legal se proporciona "tal como está" sin garantías de ningún tipo. Pacta Legal no garantiza que el sitio sea libre de errores, interrupciones o virus. El uso del sitio es bajo tu propio riesgo.
                     </p>
                 </section>
 
