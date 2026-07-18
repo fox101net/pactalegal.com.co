@@ -535,6 +535,57 @@
                 nav.classList.add('bg-white');
             }
         });
+
+        // NUEVO: Funcionalidad de la ventana de chat de WhatsApp
+        const waToggleBtn = document.getElementById('wa-toggle-btn');
+        const waChatWindow = document.getElementById('wa-chat-window');
+        const waChatInput = document.getElementById('wa-chat-input');
+        const waSendBtn = document.getElementById('wa-send-btn');
+        const waIcon = document.getElementById('wa-icon');
+
+        // Alternar visualización del chat al presionar el botón de WhatsApp
+        waToggleBtn.addEventListener('click', () => {
+            const isHidden = waChatWindow.classList.contains('hidden');
+            if (isHidden) {
+                waChatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    waChatWindow.classList.remove('scale-95', 'opacity-0');
+                    waChatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+                waIcon.className = 'fas fa-times text-2xl transition-all duration-300';
+            } else {
+                waChatWindow.classList.add('scale-95', 'opacity-0');
+                waChatWindow.classList.remove('scale-100', 'opacity-100');
+                setTimeout(() => {
+                    waChatWindow.classList.add('hidden');
+                }, 200);
+                waIcon.className = 'fab fa-whatsapp text-3xl transition-all duration-300';
+            }
+        });
+
+        // Función para enviar el mensaje personalizado redactado por el usuario
+        function sendWaMessage() {
+            const textValue = waChatInput.value.trim();
+            const phone = "573014139558";
+            // Si el cuadro de texto está vacío, enviamos un saludo predefinido
+            const finalMessage = textValue ? textValue : "Hola, me gustaría recibir asesoría legal.";
+            const encodedText = encodeURIComponent(finalMessage);
+            const waUrl = `https://wa.me/${phone}?text=${encodedText}`;
+            
+            // Abre WhatsApp en una pestaña nueva con el mensaje listo
+            window.open(waUrl, '_blank');
+            waChatInput.value = ''; // Limpiar campo tras el envío
+        }
+
+        // Listener para el botón de enviar
+        waSendBtn.addEventListener('click', sendWaMessage);
+
+        // Permitir enviar el mensaje presionando la tecla "Enter" en el input
+        waChatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendWaMessage();
+            }
+        });
     </script>
 </body>
 </html>
